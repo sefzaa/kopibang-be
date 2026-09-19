@@ -34,7 +34,7 @@ func AuthMiddleware(requiredRole string) gin.HandlerFunc {
 		}
 
 		// Set data penting ke dalam context Gin agar bisa dipakai oleh Controller
-		c.Set("user_id", claims.UserID)
+		c.Set("user_id", claims.UserID.String())
 		c.Set("role", claims.Role)
 		c.Next()
 	}
